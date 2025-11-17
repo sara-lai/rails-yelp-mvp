@@ -1,0 +1,15 @@
+<div class='bg-light mx-auto' style='max-width:600px;padding:20px;'>
+
+  <h2>New Restaurant</h2>
+
+  <%= simple_form_for @restaurant, local: true do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :phone_number %>
+    <%= f.input :category, collection: ["chinese", "italian", "japanese", "french", "belgian"], prompt: "Select a category"  %>
+    <%= f.button :submit, "Create Restaurant", class: "btn-primary" %>
+  <% end %>
+
+  <%= link_to "Cancel", restaurants_path %>
+
+</div>

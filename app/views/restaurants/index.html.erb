@@ -1,0 +1,26 @@
+<h1>All our restaurants (<%= @restaurants.length %>)</h1>
+
+
+<div style='display:flex; gap:20px; flex-wrap: wrap;'>
+
+  <% @restaurants.each do |restaurant| %>
+
+    <div class='card mb-3 shadow-sm rounded' style='max-width:300px;'>
+      <div class='card-body bg-light'>
+        <p style='font-size:1.5rem;'><%= restaurant.name %></p>
+        <p><%= restaurant.address %></p>
+        <p><%= restaurant.phone_number %></p>
+        <p><%= restaurant.category %></p>
+
+
+      </div>
+
+      <div class='card-footer bg-white'>
+        <div style='display:flex; gap:10px;'>
+          <%= link_to "View with reviews", restaurant_path(restaurant) %>
+        </div>
+      </div>
+
+    </div>
+  <% end %>
+</div>
